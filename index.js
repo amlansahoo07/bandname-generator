@@ -4,23 +4,29 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
+// Middleware setup
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Route to render the main page
 app.get("/", (req, res) => {
-  res.render("index.ejs")
+  res.render("index.ejs");
 });
 
+// Route to handle form submission and generate band name
 app.post("/submit", (req, res) => {
   let adjRandom = Math.floor(Math.random() * adj.length);
   let nounRandom = Math.floor(Math.random() * noun.length);
   let bandName = adj[adjRandom] + " " + noun[nounRandom];
-  res.render("index.ejs", {bandName: bandName})
+  res.render("index.ejs", { bandName: bandName });
 });
 
+// Start the server
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+// Arrays for generating band names
 
 const adj = [
   "abandoned",

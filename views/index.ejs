@@ -1,12 +1,17 @@
+ <!-- Include the header partial -->
 <%- include("partials/header.ejs") %>
 
+<!-- Display the generated band name if available, otherwise show a prompt -->
 <% if(locals.bandName) { %>
   <h1><%= bandName %></h1>
 <% } else { %>
   <h1>Click to generate your Band Name</h1>
 <% } %>
+
+<!-- Form to generate a new band name -->
 <form action="/submit" method="POST">
   <input type="submit" value="Generate Name">
 </form>
 
+ <!-- Include the footer partial -->
 <%- include("partials/footer.ejs") %>
