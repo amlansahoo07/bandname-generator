@@ -1,3 +1,6 @@
+<img width="1024" alt="image" src="https://github.com/user-attachments/assets/c244f512-7eaf-49ac-9399-8765e444552a">
+
+
 # Bandname Generator
 
 This project generates random band names based on combinations of adjectives and nouns.
